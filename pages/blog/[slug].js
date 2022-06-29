@@ -7,13 +7,13 @@ const graphcms = new GraphQLClient(
 
 function blogDetail({ posts }) {
   return (
-    <div>
+    <>
       {posts.map((post) => (
         <div key={post.id}>
           <PostComponent title={post.title} blogContent={post.content.html} />
         </div>
       ))}
-    </div>
+    </>
   );
 }
 
@@ -24,6 +24,7 @@ export const getStaticProps = async ({ params }) => {
   const { posts } = await graphcms.request(gql`
     {
       posts(where: { slug:"${slugId}"  }) {
+        id
         title
         content{
             html
