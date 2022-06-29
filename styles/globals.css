@@ -1,16 +1,38 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&family=Yeseva+One&display=swap');
+/* import poppins fonts from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1{
+  font-family: 'Yeseva One', cursive;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+h3{
+    font-family: 'Staatliches', cursive;
+    font-weight: lighter;
 }
 
-* {
-  box-sizing: border-box;
+.content {
+  font-family: Poppins,sans-serif;
+  font-size: 14px;
+}
+
+.content >h1,h2,h3,h4,h5,h6 {
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+}
+
+.content > table,tr{
+  width: 100%;
+  border: 0.2px solid #454545;
+  border-collapse: collapse;
+  margin-top: 10px;
+  
+}
+
+.content > table , td{
+  border: 0.2px solid #454545;
+  padding: 5px;
 }
