@@ -7,10 +7,14 @@ const graphcms = new GraphQLClient(
   "https://api-ap-south-1.graphcms.com/v2/cl4rueg1b1kxe01zc1hute3rg/master"
 );
 
-function BlogDetail({ title, id, coverPhoto, content }) {
+function BlogDetail({ title = "loading", content = "loading" }) {
   return (
     <>
-      <PostComponent title={title} blogContent={content.html} />
+      {title.len < 0 && content.len < 0 ? (
+        <div>Loading...</div>
+      ) : (
+        <PostComponent title={title} blogContent={content} />
+      )}
     </>
   );
 }

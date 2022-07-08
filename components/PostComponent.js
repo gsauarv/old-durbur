@@ -19,7 +19,7 @@ function PostComponent({ title, blogContent, coverPhoto }) {
         <h1 className="text-2xl text-left font-bold my-4">{title}</h1>
         <div
           className="content"
-          dangerouslySetInnerHTML={{ __html: blogContent }}
+          dangerouslySetInnerHTML={{ __html: blogContent.html }}
         />
       </main>
     </WrapperContainer>
