@@ -49,15 +49,17 @@ export default function Home({ posts }) {
         <main>
           {/* Section title text */}
           <Title titleText={"Explore Nepal Through Our Blogs"} />
-          {posts.map((post) => (
-            <Blogcard
-              key={post.id}
-              title={post.title}
-              slug={post.slug}
-              coverPhoto={post.coverPhoto}
-              datePublished={post.datePublished}
-            />
-          ))}
+          <div className="md:grid md:grid-cols-3 md:gap-10">
+            {posts.map((post) => (
+              <Blogcard
+                key={post.id}
+                title={post.title}
+                slug={post.slug}
+                coverPhoto={post.coverPhoto}
+                datePublished={post.datePublished}
+              />
+            ))}
+          </div>
         </main>
       </WrapperContainer>
     </div>

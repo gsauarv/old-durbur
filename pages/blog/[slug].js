@@ -1,15 +1,16 @@
 import { GraphQLClient, gql } from "graphql-request";
+import Link from "next/link";
 import React from "react";
 import PostComponent from "../../components/PostComponent";
+
 const graphcms = new GraphQLClient(
   "https://api-ap-south-1.graphcms.com/v2/cl4rueg1b1kxe01zc1hute3rg/master"
 );
 
-function BlogDetail({ title, id }) {
+function BlogDetail({ title, id, coverPhoto, content }) {
   return (
     <>
-      <h2>{title}</h2>
-      <h2>{id}</h2>
+      <PostComponent title={title} blogContent={content.html} />
     </>
   );
 }
@@ -24,6 +25,12 @@ export async function getStaticProps({ params }) {
         post(where: { slug: "${slug}" }) {
           id
           title
+            coverPhoto{
+              url
+            }
+            content{
+              html
+            }
         }} `
   );
 

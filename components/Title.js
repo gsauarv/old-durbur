@@ -1,7 +1,7 @@
 function Title({ titleText }) {
   return (
     <div>
-      <h3 className="text-lg my-5">{titleText}</h3>
+      <h3 className="text-md font-bold mt-5">{titleText}</h3>
     </div>
   );
 }
