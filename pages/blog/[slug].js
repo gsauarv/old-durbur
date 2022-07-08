@@ -5,7 +5,7 @@ const graphcms = new GraphQLClient(
   "https://api-ap-south-1.graphcms.com/v2/cl4rueg1b1kxe01zc1hute3rg/master"
 );
 
-function blogDetail({ posts }) {
+function BlogDetail({ posts }) {
   return (
     <>
       {posts.map((post) => (
@@ -17,7 +17,7 @@ function blogDetail({ posts }) {
   );
 }
 
-export default blogDetail;
+export default BlogDetail;
 
 export const getStaticProps = async ({ params }) => {
   const slugId = params.slug;
